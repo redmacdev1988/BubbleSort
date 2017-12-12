@@ -1,50 +1,65 @@
 # BubbleSort
 JS implementation of bubble sort with steps logged to console
 
-This implementation adds description for what steps it took during the bubble sort.
+Worst and Average Case Time Complexity: O(n*n).
+Worst case occurs when array is reverse sorted.
+
+Auxiliary Space: O(1)
+
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
+
+Sorting In Place: Yes
+
+Stable: Yes
+
+(Stable sorting algorithms maintain the relative order of records with equal keys (i.e. values). That is, a sorting algorithm is stable if whenever there are two records R and S with the same key and with R appearing before S in the original list, R will appear before S in the sorted list.)
+
+## Bubbling up the largest number
+
+From the start, we loop through the array and check adjacent elements. 
+if data[i] > data[i+1], then we swap the larger element to the right.
+
+That way, we slowly "bubble up" the largest element to the last spot.
 
 -- Start --
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
+[ 8, 4, 2, 10 ]
 -----------------------------
-PASS 15
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
+PASS 3
+[ 8, 4, 2, 10 ]
 -----------------------------
-22 < 22, OK
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
------------------------------
-22 < 22, OK
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
------------------------------
-22 < 54, OK
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
------------------------------
-54 > 21, BAD
-[ 22, 22, 22, 54, 21, 9, 46, 852, 35, 32, 65, 12, 356, 765, 45, 3 ]
------------------------------
-...
-etc
-...
-PASS 2
-[ 9, 12, 3, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
------------------------------
-9 < 12, OK
-[ 9, 12, 3, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
------------------------------
-12 > 3, BAD
-[ 9, 12, 3, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
+8 > 4, BAD
+[ 8, 4, 2, 10 ]
 -----------------------------
 swap
-[ 9, 3, 12, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
+[ 4, 8, 2, 10 ]
+-----------------------------
+8 > 2, BAD
+[ 4, 8, 2, 10 ]
+-----------------------------
+swap
+[ 4, 2, 8, 10 ]
+-----------------------------
+8 < 10, OK
+[ 4, 2, 8, 10 ]
+-----------------------------
+PASS 2
+[ 4, 2, 8, 10 ]
+-----------------------------
+4 > 2, BAD
+[ 4, 2, 8, 10 ]
+-----------------------------
+swap
+[ 2, 4, 8, 10 ]
+-----------------------------
+4 < 8, OK
+[ 2, 4, 8, 10 ]
 -----------------------------
 PASS 1
-[ 9, 3, 12, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
+[ 2, 4, 8, 10 ]
 -----------------------------
-9 > 3, BAD
-[ 9, 3, 12, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
------------------------------
-swap
-[ 3, 9, 12, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
+2 < 4, OK
+[ 2, 4, 8, 10 ]
 
 
 -- SORTED ARRAY --
-[ 3, 9, 12, 21, 22, 22, 22, 32, 35, 45, 46, 54, 65, 356, 765, 852 ]
+[ 2, 4, 8, 10 ]

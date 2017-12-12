@@ -66,7 +66,7 @@ function bubbleSort(intArray, outputArray, swapCallBack, passCallBack) {
 }
 
 
-var dataArray = [22,22, 22, 54,21,9,46,852,35,32,65,12,356,765,45,3];
+var dataArray = [8, 4, 2, 10];
 var globalOutputArray = [];
 
 var sorted = bubbleSort(dataArray,
