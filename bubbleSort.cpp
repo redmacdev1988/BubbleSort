@@ -1,16 +1,16 @@
-
-
 #include <iostream>
 
 using namespace std;
 
 void swap(int * dataArray, int currentIndex, int nextIndex) {
+    
     int temp = dataArray[currentIndex];
     dataArray[currentIndex] = dataArray[nextIndex];
     dataArray[nextIndex] = temp;
 }
 
 void displayDataArrayWithCurrent(int * dataArray, int size, int current) {
+    
     cout << endl;
     for (int i = 0; i < size; i++) {
         if (current == i) {
@@ -36,6 +36,7 @@ void bubbleUpLargest(int nextAvailableIndex, int * intArray, int size) {
 }
 
 void bubbleSort(int * array, int size) {
+    
     cout << "Starting bubble sort" << endl;
     for ( int lastIndex = size - 1; lastIndex >= 1; lastIndex--) {
         cout << "---" << lastIndex << "---";
@@ -43,11 +44,9 @@ void bubbleSort(int * array, int size) {
     }
 }
 
-
-
-int main(int argc, const char * argv[])
-{
-    int unsorted [] = {6,3,8, 8, 9, 24, 12, 31, 2};
+int main(int argc, const char * argv[]) {
+    
+    int unsorted [] = {6, 3, 8, 8, 9, 24, 12, 31, 2};
     bubbleSort(unsorted, sizeof(unsorted)/sizeof(int));
     return 0;
 }
